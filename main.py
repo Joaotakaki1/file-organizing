@@ -12,13 +12,15 @@ if not os.path.exists("images"):
     Path("images").mkdir(exist_ok=True)
 
 #iterates all my files and verify the extension of them, to move the file to de right folder
-for file in os.listdir():
-    f = Path(file)
-    ext = f.suffix
-    if ext == ".pdf":
-        shutil.move(file, "pdfs")
-    elif ext == ".mov" or ext == ".mp4":
-        shutil.move(file, "videos")
-    elif ext == ".png" or ext == ".svg":
-        shutil.move(file, "images")
+if __name__ == '__main__':
+    for file in os.listdir():
+        print(file)
+        f = Path(file)
+        ext = f.suffix
+        if ext == ".pdf":
+            shutil.move(file, "pdfs")
+        elif ext == ".mov" or ext == ".mp4":
+            shutil.move(file, "videos")
+        elif ext == ".png" or ext == ".svg":
+            shutil.move(file, "images")
     
